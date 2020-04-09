@@ -1,0 +1,46 @@
+npx react-native init AwesomeProject
+
+
+react-native run-android
+
+react-native start
+react-native start --reset-cache
+
+
+
+
+yarn add @react-navigation/native
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+
+add no app.js
+import 'react-native-gesture-handler';
+
+
+yarn add @react-navigation/stack
+yarn add @react-navigation/material-top-tabs react-native-tab-view
+
+
+
+yarn add react-native-vector-icons
+react-native link react-native-vector-icons
+react-native run-android
+https://oblador.github.io/react-native-vector-icons/
+
+
+yarn add @react-native-community/async-storage
+
+yarn add styled-components
+
+
+yarn add prop-types
+
+
+yarn add react-native-linear-gradient
+react-native link react-native-linear-gradient
+
+remova eslintcr
+yarn add eslint
+yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
+
+yarn eslint --init

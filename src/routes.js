@@ -1,0 +1,36 @@
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+//Paginas
+
+import CadastroLuz from './pages/CadastroLuz';
+
+const Navegacao = createMaterialTopTabNavigator();
+
+//StackNavigator
+
+function Routes() {
+  return (
+    <NavigationContainer>
+      {/* Stack.Navigator - Faz a navegação por botão, screenOptions=
+            {{ headerShown: false }}: false desabilita cabeçário */}
+      <Navegacao.Navigator
+        initialRouteName={'P1'}
+        tabBarPosition={'bottom'}
+        backBehavior={'none'}
+        keyboardDismissMode={'on-drag'}
+        tabBarOptions={{
+          showLabel: false,
+          scrollEnabled: false,
+          tabStyle: { position: 'absolute' },
+          indicatorStyle: { opacity: 0 },
+        }}
+      >
+        <Navegacao.Screen name="CadastroLuz" component={CadastroLuz} />
+      </Navegacao.Navigator>
+    </NavigationContainer>
+  );
+}
+
+export default Routes;

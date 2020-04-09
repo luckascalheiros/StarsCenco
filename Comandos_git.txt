@@ -1,0 +1,81 @@
+﻿*** Comandos cmd ***
+
+cd - Exibe diretório atual
+csl - limpara prompt de comando
+
+dir - exibe arquivos do diretório
+    dir /b /a
+    dir /b - Exibi uma lista simples de diretórios
+    dir /a - Exibi arquicos ocultos
+
+q - pressiona a tecla quando o terminal trava
+
+
+
+*** Comandos Git ***
+
+
+git version - Exibe versão do Git
+
+Configuração - 
+    git config --global user.name "Lucas Calheiros" - Adiona seu nome ao projeto
+    git config user.name - exibe nome do usauario do projeto
+
+    git config --global user.email "luccascalheiros@gmail.com" - define email
+    git config user.email - exibe email do usuario
+
+    git config --global core.editor "caminho do executavel" - define o editor de texto padrão
+    git config core.editor - Exibe Editor padão
+
+
+git init - Inicia o repositório Git ao projeto
+git add nome_arquivo.txt - Adiciona arquivo ao index
+    git add * - Adiciona todos os arquivos ao index
+
+git status - verifica arquivos que foram indexados
+
+git commit -m "Comentário claro da altração" - Adiciona arquivos indexados ao repositório local .git
+    git commit -am "descrição daas funções de log" - a função am permit gravar o commit já executando o git add
+
+
+git log - Exibo todos com commits
+    git log --oneline - informações redumidas dos commits
+    git log --graph - Cria um grafico dos commits do projeto
+    log --oneline --graph - Junção das duas funções
+    git log --oneline --graph --all - Exibi grafico com todos os commit e as branchs criadas (--all)
+
+git branch - Identifica em qual branch o projeto está, a branch é a ramificação do projeto, a master é a branch principal
+
+
+git checkout 77a4675 - selecioona uma versão do projeto de acordo com o commit
+    git checkout master - Volta o projeto para o ultimo commit
+    git checkout nome_branch - Deixa o projeto na branch
+    git checkout nome_do_arquivo.txt - Volta estado do arquivo ao ultimo commit
+    git checkout -b nome_nova_branch - Criar uma nova ramificação nova branch
+    
+git diff - exibe modificações no projeto antes que não estão no branch
+
+git reset HEAD - retira modificações do conteiner git add
+git reset HEAD nome_do_arquivo.txt - Retira modificações do conteiner de arquivo especifico
+
+git reset --hard c4f186f - Volta a versão e apaga os demais commits (cuidado ao usar)
+
+
+git checkout -b nome_nova_branch - Criar uma nova ramificação nova branch
+git merge nome_brabch - uni e faz a fusão do brabch com a master
+    Resolução de conflitos:
+    Accept Current Change -  Manter os conflitos da branch master
+    Accept Incoming Change - Manter as modificações da branch secundária
+    Accept Both Changes - Manter as duas Modificações
+    Compare Changes - comparação refinada do código
+
+git remote - Verifica se existe repositório remoto - origin
+    git remote add origin https://github.com/luckascalheiros/Estudo_javaScript_Git.git - Adicona repositório local ao repositório remoto do github
+    git push -u origin master - Primeira vez que envia o diretorio do projeto para o git
+    git remote -v - detalhes dos repositorio remoto
+   
+
+git push -u origin master - envia projeto da branch master para repositório remoto origin
+    git push - envia modificações após projeto já sincronizado
+
+git pull - Atualiza alterações no diretório remoto para o diretório local

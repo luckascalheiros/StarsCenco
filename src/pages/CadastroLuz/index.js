@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, Dimensions, StatusBar, Image } from 'react-native';
-
-//Componentes
-import Background from '../../components/Background';
-
-//estilos
+import {
+  Text,
+  StyleSheet,
+  Dimensions,
+  StatusBar,
+  Image,
+  ImageBackground,
+} from 'react-native';
 
 //Imagens
-const BackImage = require('../../assets/backgroudaLuz.png');
-const LogoLuz = require('../../assets/luzLogo.png');
+const bkSombra = require('../../assets/TelaSombra.png');
 
 import {
   Container,
@@ -16,9 +17,7 @@ import {
   FormImput,
   ContainerForm,
   ImageAvatar,
-  ImageClasse,
   ContainerAvatar,
-  Footer,
   TextTitle,
   Strong,
   ContainerTitle,
@@ -27,27 +26,13 @@ import {
 } from './styles';
 
 //estilhos que executam dinamicamente
-const styled = StyleSheet.create({
-  BackImage: {
-    resizeMode: 'contain',
-    position: 'absolute',
-    left: 0,
-    bottom: 0,
-    opacity: 0.2,
-    width: (Dimensions.get('window').width * 80) / 100,
-    height: (Dimensions.get('window').width * 80) / 100,
-  },
-});
 
 class CadastroLuz extends Component {
   state = {
-    corClara: '#2C5BBF',
-    corEscura: '#072973',
-    corDetalhes: '#0093EF',
+    corDetalhes: '#d72d2d',
     avatar: require('../../assets/perfil.png'),
     gamerTag: '',
     loading: false,
-
     textStatusText: '',
   };
 
@@ -58,37 +43,30 @@ class CadastroLuz extends Component {
   setStatusText() {}
 
   render() {
-    const {
-      corClara,
-      corEscura,
-      corDetalhes,
-      avatar,
-      loading,
-      textStatusText,
-    } = this.state;
+    const { corDetalhes, avatar, loading, textStatusText } = this.state;
     return (
-      <Background colors={[corEscura, corClara]}>
-        <StatusBar barStyle="light-content" backgroundColor={corClara} />
-        <Image source={BackImage} style={styled.BackImage} />
+      <ImageBackground source={bkSombra} style={{ flex: 1 }}>
+        <StatusBar
+          translucent={true}
+          barStyle="light-content"
+          backgroundColor={'rgba(0, 0, 0, 0)'}
+        />
 
         <Container>
-          <ContainerAvatar>
-            <ImageAvatar source={avatar} />
-            <ImageClasse source={LogoLuz} />
-          </ContainerAvatar>
           <ContainerTitle>
+            <ImageAvatar source={avatar} backColor={corDetalhes} />
             <TextTitle>
               CRIAR <Strong>CONTA</Strong>
             </TextTitle>
+            <LineTitle backColor={corDetalhes} />
           </ContainerTitle>
-          <LineTitle />
 
           <ContainerForm>
             <FormImput
               icon="gamepad-variant"
               autoCorrect={false}
               autoCaptalize="none"
-              placeholder="Informe sua Gamertag"
+              placeholder="Escolha sua Gamertag"
               borderColor={corDetalhes}
               onChange={this.textStatusText}
             />
@@ -101,11 +79,10 @@ class CadastroLuz extends Component {
             >
               ESCOLHER LADO DA LUZ
             </SubmitButton>
-            <StatusText>Gamertag já usada!</StatusText>
+            <StatusText>{textStatusText}</StatusText>
           </ContainerForm>
         </Container>
-        <Footer></Footer>
-      </Background>
+      </ImageBackground>
     );
   }
 }

@@ -7,6 +7,7 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   padding: 0 30px;
+  padding-top: 250px;
 `;
 
 export const ContainerForm = styled.View`
@@ -20,9 +21,6 @@ export const FormImput = styled(Input)`
 export const SubmitButton = styled(Button)`
   margin-top: 5px;
 `;
-export const SignLink = styled.TouchableOpacity`
-  margin-top: 20px;
-`;
 
 export const ContainerAvatar = styled.View`
   flex-direction: row;
@@ -31,20 +29,10 @@ export const ContainerAvatar = styled.View`
 `;
 export const ImageAvatar = styled.Image`
   border-radius: 100px;
-  border: 6px solid #0093ef;
+  border: 6px solid ${(props) => props.backColor};
+  margin-bottom: 25px;
   height: 170px;
   width: 170px;
-`;
-export const ImageClasse = styled.Image`
-  height: 80px;
-  width: 80px;
-  opacity: 0.6;
-  margin-left: 15px;
-`;
-
-export const Footer = styled.View`
-  height: 15px;
-  background-color: #0093ef;
 `;
 
 export const TextTitle = styled.Text`
@@ -55,7 +43,7 @@ export const TextTitle = styled.Text`
 `;
 
 export const ContainerTitle = styled.View`
-  margin-bottom: 30px;
+  align-items: center;
 `;
 
 export const Strong = styled.Text`
@@ -63,10 +51,11 @@ export const Strong = styled.Text`
 `;
 
 export const LineTitle = styled.View`
+  margin-top: 30px;
   border-radius: 10px;
   width: 130;
   height: 2;
-  background-color: #0093ef;
+  background-color: ${(props) => props.backColor};
 `;
 
 export const StatusText = styled.Text`

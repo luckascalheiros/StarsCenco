@@ -5,6 +5,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 //Paginas
 
 import CadastroLuz from './pages/CadastroLuz';
+import CadastroNegro from './pages/CadastroLuz';
 
 const Navegacao = createMaterialTopTabNavigator();
 
@@ -27,7 +28,8 @@ function Routes() {
           indicatorStyle: { opacity: 0 },
         }}
       >
-        <Navegacao.Screen name="CadastroLuz" component={CadastroLuz} />
+        <Navegacao.Screen name="luz" component={CadastroNegro} />
+        <Navegacao.Screen name="negro" component={CadastroLuz} />
       </Navegacao.Navigator>
     </NavigationContainer>
   );

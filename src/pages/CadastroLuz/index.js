@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 //Imagens
-const bkSombra = require('../../assets/TelaSombra.png');
 
 import {
   Container,
@@ -17,7 +16,6 @@ import {
   FormImput,
   ContainerForm,
   ImageAvatar,
-  ContainerAvatar,
   TextTitle,
   Strong,
   ContainerTitle,
@@ -29,12 +27,18 @@ import {
 
 class CadastroLuz extends Component {
   state = {
+    backImage: require('../../assets/backgroundLuz.png'),
     corDetalhes: '#d72d2d',
     avatar: require('../../assets/perfil.png'),
     gamerTag: '',
     loading: false,
     textStatusText: '',
+    buttonText: 'ESCOLHER LADO DA LUZ',
   };
+
+  componentDidMount() {
+    this.setLadoForça();
+  }
 
   handleGameTag() {}
 
@@ -42,10 +46,35 @@ class CadastroLuz extends Component {
 
   setStatusText() {}
 
+  setLadoForça() {
+    const name = this.props.route.name;
+
+    if (name === 'luz') {
+      this.setState({
+        backImage: require('../../assets/backgroundLuz.png'),
+        corDetalhes: '#016ce3',
+        buttonText: 'ESCOLHER LADO DA LUZ',
+      });
+    } else if (name === 'negro') {
+      this.setState({
+        backImage: require('../../assets/backgroundNegro.png'),
+        corDetalhes: '#d72d2d',
+        buttonText: 'ESCOLHER LADO NEGRO',
+      });
+    }
+  }
+
   render() {
-    const { corDetalhes, avatar, loading, textStatusText } = this.state;
+    const {
+      corDetalhes,
+      avatar,
+      loading,
+      textStatusText,
+      backImage,
+      buttonText,
+    } = this.state;
     return (
-      <ImageBackground source={bkSombra} style={{ flex: 1 }}>
+      <ImageBackground source={backImage} style={{ flex: 1 }}>
         <StatusBar
           translucent={true}
           barStyle="light-content"
@@ -77,7 +106,7 @@ class CadastroLuz extends Component {
               backgroundColor={corDetalhes}
               loading={loading}
             >
-              ESCOLHER LADO DA LUZ
+              {buttonText}
             </SubmitButton>
             <StatusText>{textStatusText}</StatusText>
           </ContainerForm>

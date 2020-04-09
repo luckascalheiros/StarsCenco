@@ -31,8 +31,8 @@ export const ImageAvatar = styled.Image`
   border-radius: 100px;
   border: 6px solid ${(props) => props.backColor};
   margin-bottom: 25px;
-  height: 170px;
-  width: 170px;
+  height: 180px;
+  width: 180px;
 `;
 
 export const TextTitle = styled.Text`

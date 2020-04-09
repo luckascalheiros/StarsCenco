@@ -23,6 +23,7 @@ import {
   Strong,
   ContainerTitle,
   LineTitle,
+  StatusText,
 } from './styles';
 
 //estilhos que executam dinamicamente
@@ -43,13 +44,30 @@ class CadastroLuz extends Component {
     corClara: '#2C5BBF',
     corEscura: '#072973',
     corDetalhes: '#0093EF',
-    avatar: require('../../assets/gallery/av(37).jpg'),
+    avatar: require('../../assets/perfil.png'),
+    gamerTag: '',
+    loading: false,
+
+    textStatusText: '',
   };
 
+  handleGameTag() {}
+
+  save() {}
+
+  setStatusText() {}
+
   render() {
-    const { corClara, corEscura, corDetalhes, avatar } = this.state;
+    const {
+      corClara,
+      corEscura,
+      corDetalhes,
+      avatar,
+      loading,
+      textStatusText,
+    } = this.state;
     return (
-      <Background colors={[corClara, corEscura]}>
+      <Background colors={[corEscura, corClara]}>
         <StatusBar barStyle="light-content" backgroundColor={corClara} />
         <Image source={BackImage} style={styled.BackImage} />
 
@@ -72,15 +90,18 @@ class CadastroLuz extends Component {
               autoCaptalize="none"
               placeholder="Informe sua Gamertag"
               borderColor={corDetalhes}
+              onChange={this.textStatusText}
             />
             <SubmitButton
               //   onPress={() => {
               //     navigation.navigate('SignIn');
               //   }}
               backgroundColor={corDetalhes}
+              loading={loading}
             >
               ESCOLHER LADO DA LUZ
             </SubmitButton>
+            <StatusText>Gamertag já usada!</StatusText>
           </ContainerForm>
         </Container>
         <Footer></Footer>

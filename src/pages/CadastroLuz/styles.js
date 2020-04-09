@@ -23,11 +23,6 @@ export const SubmitButton = styled(Button)`
 export const SignLink = styled.TouchableOpacity`
   margin-top: 20px;
 `;
-export const SignLinkText = styled.Text`
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-`;
 
 export const ContainerAvatar = styled.View`
   flex-direction: row;
@@ -72,4 +67,11 @@ export const LineTitle = styled.View`
   width: 130;
   height: 2;
   background-color: #0093ef;
+`;
+
+export const StatusText = styled.Text`
+  align-self: center;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 14px;
 `;

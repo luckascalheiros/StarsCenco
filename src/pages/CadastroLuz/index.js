@@ -6,6 +6,7 @@ import {
   StatusBar,
   Image,
   ImageBackground,
+  View,
 } from 'react-native';
 
 //Imagens
@@ -89,7 +90,6 @@ class CadastroLuz extends Component {
             </TextTitle>
             <LineTitle backColor={corDetalhes} />
           </ContainerTitle>
-
           <ContainerForm>
             <FormImput
               icon="gamepad-variant"

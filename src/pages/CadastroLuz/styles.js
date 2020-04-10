@@ -3,59 +3,47 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 export const Container = styled.View`
+  /* flex-direction: row; */
   flex: 1;
-  justify-content: center;
-  align-items: center;
   padding: 0 30px;
+  justify-content: flex-end;
 `;
 
 export const ContainerForm = styled.View`
   /* faz ele preencher todo o espaço possovel, self se refere a ele mesmo */
+  flex: 1;
   align-self: stretch;
-  margin-top: 40px;
+
+  /* justify-content: flex-end; */
+  margin-top: 40;
 `;
+
+export const ContainerTitle = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 380px;
+`;
+
 export const FormImput = styled(Input)`
   margin-bottom: 10px;
 `;
 export const SubmitButton = styled(Button)`
   margin-top: 5px;
 `;
-export const SignLink = styled.TouchableOpacity`
-  margin-top: 20px;
-`;
 
-export const ContainerAvatar = styled.View`
-  flex-direction: row;
-  margin-bottom: 30px;
-  align-items: baseline;
-`;
 export const ImageAvatar = styled.Image`
-  border-radius: 100px;
-  border: 6px solid #0093ef;
-  height: 170px;
-  width: 170px;
-`;
-export const ImageClasse = styled.Image`
-  height: 80px;
-  width: 80px;
-  opacity: 0.6;
-  margin-left: 15px;
-`;
-
-export const Footer = styled.View`
-  height: 15px;
-  background-color: #0093ef;
+  border: 6px solid ${(props) => props.backColor};
+  margin-bottom: 25px;
+  border-radius: 90px;
+  height: 180px;
+  width: 180px;
 `;
 
 export const TextTitle = styled.Text`
   font-size: 33px;
   color: #eee;
-  font-weight: 900;
   padding: 0;
-`;
-
-export const ContainerTitle = styled.View`
-  margin-bottom: 30px;
 `;
 
 export const Strong = styled.Text`
@@ -63,10 +51,11 @@ export const Strong = styled.Text`
 `;
 
 export const LineTitle = styled.View`
+  margin-top: 30px;
   border-radius: 10px;
   width: 130;
   height: 2;
-  background-color: #0093ef;
+  background-color: ${(props) => props.backColor};
 `;
 
 export const StatusText = styled.Text`

@@ -1,39 +1,21 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Dimensions } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 //Paginas
+import Cadastro from './routes.cadastro';
+import Galarry from './components/Gallery';
 
-import CadastroLuz from './pages/CadastroLuz';
-import CadastroNegro from './pages/CadastroLuz';
-import TelaEscolha from './pages/Escolha';
-
-const Navegacao = createMaterialTopTabNavigator();
+const Stack = createStackNavigator();
 
 //StackNavigator
-
 function Routes() {
   return (
     <NavigationContainer>
-      {/* Stack.Navigator - Faz a navegação por botão, screenOptions=
-            {{ headerShown: false }}: false desabilita cabeçário */}
-      <Navegacao.Navigator
-        initialRouteName={'TelaEscolha'}
-        tabBarPosition={'bottom'}
-        backBehavior={'none'}
-        keyboardDismissMode={'on-drag'}
-        tabBarOptions={{
-          showLabel: false,
-          scrollEnabled: false,
-          tabStyle: { position: 'absolute' },
-          indicatorStyle: { opacity: 0 },
-        }}
-      >
-        <Navegacao.Screen name="luz" component={CadastroNegro} />
-        <Navegacao.Screen name="TelaEscolha" component={TelaEscolha} />
-        <Navegacao.Screen name="negro" component={CadastroLuz} />
-      </Navegacao.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name="Galeria" component={Galarry} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

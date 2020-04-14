@@ -37,7 +37,6 @@ class TelaEscolha extends Component {
     this.setState({
       modalStatus: false,
     });
-    console.log(this.state.modalStatus);
   }
 
   render() {
@@ -56,6 +55,11 @@ class TelaEscolha extends Component {
           backgroundColor: '#000',
         }}
       >
+        <StatusBar
+          translucent={true}
+          barStyle="light-content"
+          backgroundColor={'rgba(0, 0, 0, 0)'}
+        />
         <View>
           <Modal
             style={{ flex: 1 }}
@@ -79,14 +83,7 @@ class TelaEscolha extends Component {
           </Modal>
         </View>
 
-        <StatusBar
-          translucent={true}
-          barStyle="light-content"
-          backgroundColor={'rgba(0, 0, 0, 0)'}
-        />
-        <Container>
-          <ImageLogo source={logoStarCenco} />
-        </Container>
+        <ImageLogo source={logoStarCenco} />
       </ImageBackground>
     );
   }

@@ -16,15 +16,19 @@ export const ContainerText = styled.View`
 `;
 
 export const SubmitButton = styled(Button)`
-  /* margin-top: 400px; */
-  margin-left: 50px;
-  margin-right: 50px;
+  align-self: stretch;
+  margin-top: 400px;
+  border-radius: 0px;
+
   border: 2px solid;
 `;
 
 export const ImageLogo = styled.Image`
+  margin-top: 120px;
+  align-self: center;
+
   width: 300px;
-  height: 151px;
+  height: 125px;
 `;
 
 export const ModalTextL1 = styled.Text`
